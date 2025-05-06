@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>P.O.S.T.E+ | Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    .bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bubbles span {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  bottom: -50px;
+  border-radius: 50%;
+  animation: rise 15s linear infinite;
+  filter: blur(1px);
+}
+
+.bubbles span:nth-child(1) {
+  left: 10%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 0s;
+}
+
+.bubbles span:nth-child(2) {
+  left: 20%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 3s;
+}
+
+.bubbles span:nth-child(3) {
+  left: 35%;
+  animation-delay: 6s;
+}
+
+.bubbles span:nth-child(4) {
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  animation-delay: 1s;
+}
+
+.bubbles span:nth-child(5) {
+  left: 65%;
+  animation-delay: 4s;
+}
+
+.bubbles span:nth-child(6) {
+  left: 75%;
+  width: 10px;
+  height: 10px;
+  animation-delay: 7s;
+}
+
+.bubbles span:nth-child(7) {
+  left: 85%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 2s;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-1000px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.bg-hero {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+  /* Fundo Gradiente Hero com animação e efeito 3D */
+.bg-hero {
+  background: linear-gradient(270deg, #dfff00, #00ffe0, #dfff00);
+  background-size: 600% 600%;
+  animation: moveGradient 10s ease infinite;
+  color: white;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  box-shadow: 0 10px 40px rgba(0, 255, 255, 0.3), 0 -10px 40px rgba(255, 255, 0, 0.2);
+}
+
+/* Botão com gradiente animado e relevo 3D */
+.btn-gradient {
+  background: linear-gradient(270deg, #dfff00, #00ffe0, #dfff00);
+  background-size: 400% 400%;
+  animation: moveGradient 6s ease infinite;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  box-shadow: 0 6px 12px rgba(0, 255, 128, 0.3), inset 0 -4px 6px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-gradient:hover {
+  transform: translateY(-6px) rotateX(10deg);
+  box-shadow: 0 12px 24px rgba(0, 255, 128, 0.5), inset 0 -6px 8px rgba(255, 255, 255, 0.4);
+}
+
+/* Animação de movimento do gradiente */
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+  
+    /* Navbar */
+    .navbar {
+      background-color: #111;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+  
+    .navbar-dark .navbar-nav .nav-link {
+      color: #fff;
+      font-weight: 600;
+    }
+  
+    .navbar-dark .navbar-nav .nav-link:hover {
+      color: #00ffe5; /* Verde ciano claro */
+    }
+  
+    .navbar.scrolled {
+      background-color: #111;
+    }
+  
+    /* Cartões */
+    .card {
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.3);
+    }
+  
+    /* Corpo da Página */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #121212;
+      color: #f4f4f4;
+    }
+  
+    h1, h2 {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+  
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+  
+    p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+  
+    /* Estilos de Seção */
+    section {
+      padding: 80px 0;
+    }
+  
+    /* Footer */
+    footer {
+      background-color: #1a1a1a;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.2);
+    }
+  
+    footer a {
+      color: #00ffe5;
+      text-decoration: none;
+    }
+  
+    footer a:hover {
+      text-decoration: underline;
+    }
+  
+    /* Últimas Notícias */
+    .card-body {
+      padding: 20px;
+    }
+  
+    .card-title {
+      font-size: 1.3rem;
+      color: #ffff00; /* Amarelo neon para destaque */
+      font-weight: bold;
+    }
+  
+    .card i {
+      font-size: 2rem;
+      color: #00ffe5; /* Verde ciano claro */
+    }
+  
+    .card-text {
+      font-size: 1rem;
+      color: #ddd;
+    }
+  
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+  
+      section {
+        padding: 60px 20px;
+      }
+    }
+  </style>
+  
+</head>
+<body class="bg-dark text-white">
+   <!-- Música em execução automaticamente -->
+   <audio autoplay loop>
+    <source src="lofilan.mp3" type="audio/mp3">
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">P.O.S.T.E+</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="quemsomos.html">Quem Somos</a></li>
+          <li class="nav-item"><a class="nav-link" href="novidades.html">Novidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Início -->
+  <section class="vh-100 d-flex align-items-center text-white text-center bg-hero">
+
+    
+    <div class="container">
+      <div class="bubbles">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <h1 class="display-4 fw-bold">P.O.S.T.E+ Inovação</h1>
+      <p class="lead">Tecnologia, conectividade e iluminação no futuro urbano.</p>
+      <a href="novidades.html" class="btn btn-gradient mt-4">
+        <i class="fas fa-bolt"></i> Ver Últimas Novidades
+      </a>
+    </div>
+  </section>
+
+  <!-- Últimas Notícias -->
+<section class="py-5 bg-dark text-white">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-4">Últimas Notícias</h2>
+
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 bg-secondary text-white">
+          <img src="poste1.png" class="card-img-top" alt="Poste em Salvador">
+          <div class="card-body">
+            <i class="fas fa-city mb-3"></i>
+            <h5 class="card-title">Expansão em Salvador</h5>
+            <p class="card-text">P.O.S.T.E+ chega à capital soteropolitana com mais de 100 unidades inteligentes instaladas.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 bg-secondary text-white">
+          <img src="poste2.png" class="card-img-top" alt="Poste com satélite">
+          <div class="card-body">
+            <i class="fas fa-satellite-dish mb-3"></i>
+            <h5 class="card-title">Tecnologia Integrada</h5>
+            <p class="card-text">Nossos postes agora contam com sensores IoT para coleta de dados em tempo real.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 bg-secondary text-white">
+          <img src="poste3.png" class="card-img-top" alt="Poste iluminado à noite">
+          <div class="card-body">
+            <i class="fas fa-lightbulb mb-3"></i>
+            <h5 class="card-title">Sustentabilidade</h5>
+            <p class="card-text">Iluminação LED alimentada por energia solar reduz custos e impacto ambiental.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seção Sobre o POSTE+ na sua cidade -->
+<section class="py-5 bg-black text-white position-relative">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-4 text-shadow">Qual seria o P.O.S.T.E+ Ideal Para Você?</h2>
+
+
+<!-- Container do vídeo com bordas arredondadas e sombra -->
+<div class="container d-flex justify-content-center mb-5">
+  <div class="ratio ratio-16x9 rounded-4 shadow" style="overflow: hidden; max-width: 800px;">
+    <iframe 
+      src="https://www.youtube.com/embed/tW7-itznwVQ" 
+      title="YouTube video player"
+      allowfullscreen 
+      style="border: 0;">
+    </iframe>
+  </div>
+</div>
+
+    <p class="lead text-center text-shadow">
+      O P.O.S.T.E+ oferece soluções inovadoras para diferentes ambientes. Para áreas urbanas, ele combina iluminação inteligente, Wi-Fi gratuito e câmeras de segurança, proporcionando mais conectividade e segurança para a comunidade. Nas zonas rurais, o P.O.S.T.E+ utiliza energia solar, garantindo autonomia e eficiência, sem depender da rede elétrica. Já em parques, ele oferece recarga para dispositivos móveis, monitoramento ambiental e Wi-Fi, criando um espaço mais interativo e seguro para os visitantes. O P.O.S.T.E+ é a tecnologia a serviço do bem-estar e da sustentabilidade em cada tipo de ambiente.
+    </p>
+  </div>
+
+  <!-- Animação de bolhas -->
+  <div class="bubbles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</section>
+<!-- Chatbot de Dúvidas -->
+<div class="chatbot-container position-fixed bottom-0 end-0 mb-4 me-4">
+  <button class="btn btn-gradient" id="chatbotToggle">
+    <i class="fas fa-comment-dots"></i> Chatbot
+  </button>
+
+  <div id="chatbotBox" class="card bg-dark text-white shadow-lg d-none">
+    <div class="card-header">
+      <h5 class="card-title">Chatbot de Dúvidas</h5>
+      <button class="btn btn-sm btn-outline-light" id="closeChatbot"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="card-body">
+      <div id="chatbox" class="mb-3" style="max-height: 200px; overflow-y: auto;">
+        <div class="message bot-message">Olá! Como posso te ajudar hoje? Digite um número de 1 a 6 para resolver sua dúvida.</div>
+      </div>
+      <input type="number" id="userInput" class="form-control" placeholder="Digite um número entre 1 e 6" />
+      <button class="btn btn-gradient mt-2" id="sendBtn">Enviar</button>
+    </div>
+  </div>
+</div>
+<!-- Script do Chatbot -->
+<script>
+  // Quando o chatbot for exibido, mostra as opções de perguntas disponíveis
+  document.getElementById("chatbotToggle").addEventListener("click", function() {
+    // Exibe o chatbot e as opções de perguntas
+    document.getElementById("chatbotBox").classList.toggle("d-none");
+    showOptions();
+  });
+
+  // Quando o usuário clica no botão de fechar do chatbot
+  document.getElementById("closeChatbot").addEventListener("click", function() {
+    // Esconde o chatbox
+    document.getElementById("chatbotBox").classList.add("d-none");
+  });
+
+  // Função que exibe as opções de perguntas no chat
+  function showOptions() {
+    const chatbox = document.getElementById("chatbox");
+    const optionsMessage = `
+      <div class="message bot-message">
+        <p><strong>Escolha uma dúvida:</strong></p>
+        <p>1 - O que é o P.O.S.T.E+?</p>
+        <p>2 - Como funciona a iluminação inteligente?</p>
+        <p>3 - O que é IoT?</p>
+        <p>4 - Quais os benefícios de Wi-Fi gratuito?</p>
+        <p>5 - Como o P.O.S.T.E+ pode melhorar a segurança da cidade?</p>
+        <p>6 - Como posso instalar o P.O.S.T.E+ na minha cidade?</p>
+      </div>
+    `;
+    chatbox.innerHTML = optionsMessage; // Exibe as opções de perguntas
+  }
+
+  // Quando o usuário clica no botão de enviar a mensagem
+  document.getElementById("sendBtn").addEventListener("click", function() {
+    const userInput = document.getElementById("userInput").value;
+    const chatbox = document.getElementById("chatbox");
+    let botMessage = "";
+
+    // Respostas para cada número
+    if (userInput === "1") {
+      botMessage = "Dúvida 1: O que é o P.O.S.T.E+? \nO P.O.S.T.E+ é um sistema de monitoramento que usa dispositivos IoT para melhorar a segurança e infraestrutura de uma cidade. Ele pode controlar desde semáforos até monitoramento de tráfego e iluminação pública.";
+    } else if (userInput === "2") {
+      botMessage = "Dúvida 2: Como funciona a iluminação inteligente? \nA iluminação inteligente utiliza sensores para ajustar a intensidade da luz de acordo com a necessidade do ambiente ou hora do dia. Ela também pode ser controlada remotamente para maior eficiência energética.";
+    } else if (userInput === "3") {
+      botMessage = "Dúvida 3: O que é IoT? \nIoT (Internet das Coisas) refere-se à conexão de dispositivos físicos à internet, permitindo a coleta e troca de dados. Exemplos incluem sensores de temperatura, câmeras de segurança e dispositivos domésticos inteligentes.";
+    } else if (userInput === "4") {
+      botMessage = "Dúvida 4: Quais os benefícios de Wi-Fi gratuito? \nO Wi-Fi gratuito em áreas públicas proporciona acesso à internet para pessoas que não possuem conexão em casa, além de facilitar serviços de emergência e promover a inclusão digital.";
+    } else if (userInput === "5") {
+      botMessage = "Dúvida 5: Como o P.O.S.T.E+ pode melhorar a segurança da cidade? \nO P.O.S.T.E+ pode integrar câmeras de segurança, sensores de movimento e outros dispositivos para identificar comportamentos suspeitos e alertar autoridades em tempo real, aumentando a segurança urbana.";
+    } else if (userInput === "6") {
+      botMessage = "Dúvida 6: Como posso instalar o P.O.S.T.E+ na minha cidade? \nPara instalar o P.O.S.T.E+ em sua cidade, é necessário realizar uma análise da infraestrutura atual e, em seguida, planejar a implementação dos dispositivos IoT em pontos estratégicos. O processo envolve a integração de sistemas e a formação de equipes de monitoramento.";
+    } else {
+      botMessage = "Por favor, digite um número entre 1 e 6 para sua dúvida.";
+    }
+
+    // Exibe a mensagem do usuário e a resposta do bot
+    chatbox.innerHTML += `<div class="message user-message">${userInput}</div>`;
+    chatbox.innerHTML += `<div class="message bot-message">${botMessage}</div>`;
+    // Faz o chatbox rolar para mostrar a última mensagem
+    chatbox.scrollTop = chatbox.scrollHeight;
+
+    // Limpa o campo de entrada após o envio da mensagem
+    document.getElementById("userInput").value = "";
+  });
+</script>
+
+<!-- Estilos do Chatbot -->
+<style>
+  /* Define o nível de sobreposição do chatbot para que ele fique acima de outros elementos */
+  .chatbot-container {
+    z-index: 1050;
+  }
+
+  /* Define a posição e o estilo do box do chatbot */
+  #chatbotBox {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    border-radius: 12px;
+    animation: slideIn 0.5s ease;
+  }
+
+  /* Estilo geral das mensagens no chat */
+  .message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+  }
+
+  /* Estilo das mensagens do bot */
+  .bot-message {
+    background-color: #333;
+  }
+
+  /* Estilo das mensagens do usuário */
+  .user-message {
+    background-color: #00ffe5;
+    color: #000;
+  }
+
+  /* Define o estilo do campo de entrada do usuário */
+  #userInput {
+    margin-top: 10px;
+  }
+
+  /* Animação de deslizamento para aparecer o chatbot */
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+</style>
+
+
+</style>
+
+<style>
+  /* Animação do fundo degradê */
+  section {
+    background: linear-gradient(45deg, #000, #333, #000);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+  }
+
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Animação das bolhas flutuantes */
+  .bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .bubbles span {
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    bottom: -50px;
+    border-radius: 50%;
+    animation: rise 7s linear infinite;
+    filter: blur(1px);
+  }
+
+  .bubbles span:nth-child(1) {
+    left: 5%;
+    width: 12px;
+    height: 12px;
+    animation-delay: 0s;
+  }
+
+  .bubbles span:nth-child(2) {
+    left: 15%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+  }
+
+  .bubbles span:nth-child(3) {
+    left: 25%;
+    width: 18px;
+    height: 18px;
+    animation-delay: 3s;
+  }
+
+  .bubbles span:nth-child(4) {
+    left: 35%;
+    width: 14px;
+    height: 14px;
+    animation-delay: 1s;
+  }
+
+  .bubbles span:nth-child(5) {
+    left: 45%;
+    width: 22px;
+    height: 22px;
+    animation-delay: 4s;
+  }
+
+  .bubbles span:nth-child(6) {
+    left: 55%;
+    width: 16px;
+    height: 16px;
+    animation-delay: 5s;
+  }
+
+  .bubbles span:nth-child(7) {
+    left: 65%;
+    width: 24px;
+    height: 24px;
+    animation-delay: 6s;
+  }
+
+  .bubbles span:nth-child(8) {
+    left: 75%;
+    width: 13px;
+    height: 13px;
+    animation-delay: 7s;
+  }
+
+  .bubbles span:nth-child(9) {
+    left: 85%;
+    width: 19px;
+    height: 19px;
+    animation-delay: 8s;
+  }
+
+  .bubbles span:nth-child(10) {
+    left: 95%;
+    width: 14px;
+    height: 14px;
+    animation-delay: 9s;
+  }
+
+  .bubbles span:nth-child(11) {
+    left: 60%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 10s;
+  }
+
+  .bubbles span:nth-child(12) {
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    animation-delay: 11s;
+  }
+
+  @keyframes rise {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(-1000px) scale(0.5);
+      opacity: 0;
+    }
+  }
+
+  /* Efeito de relevo para o texto */
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+</style>
+
+
+  </div>
+
+  
+</section>
+
+  <!-- Copyright -->
+  <footer>
+    <p style="font-size: 0.7rem; text-align: center;">&copy; 2025 P.O.S.T.E+. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  
+</body>
+</html>

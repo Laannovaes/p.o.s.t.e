@@ -1,0 +1,173 @@
+/* Efeito de Relevo nos Botões */
+.btn {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f4f4f4;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #1a1a1a;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+  font-weight: 600;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #ff7f00; /* Cor de hover para roxo neon */
+}
+
+.navbar.scrolled {
+  background-color: #111;
+}
+
+/* Efeito de Relevo nos Cartões */
+.card-glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Borda discreta para o cartão */
+}
+
+.card-glass-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo do Corpo da Página */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(45deg, #8a2be2, #ffb900); /* Degradê roxo neon e amarelo */
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+h2, h4 {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+p {
+  font-size: 1.1rem;
+  color: #f4f4f4;
+}
+
+.text-muted {
+  color: #777;
+}
+
+.text-primary {
+  color: #ff7f00; /* Roxo neon para links e destaques */
+}
+
+h4 {
+  font-size: 1.5rem;
+  color: #f1f1f1;
+}
+
+/* Estilo das Seções */
+section {
+  padding: 80px 0;
+}
+
+/* Rodapé */
+footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+footer a {
+  color: #cb731a;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo para o Copyright */
+footer .copyright {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Estilo do Título da Seção Quem Somos */
+#quem-somos {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  margin-top: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Adicionando Relevos e Estilo de Destaque nos Títulos */
+h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff7f00;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes de Relevo no Conteúdo de Quem Somos */
+#quem-somos p {
+  font-size: 1.2rem;
+  color: #e2e1e1;
+}
+
+/* Personalização Global para Cartões */
+.card-glass-effect {
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card-glass-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos Adicionais Globais */
+a {
+  color: #ff7f00;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Definindo o fundo da página para garantir uma aparência consistente */
+html, body {
+  height: 100%;
+}
+
+/* Ajustes para responsividade */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+
+  #quem-somos {
+    padding: 40px 20px;
+  }
+}
